@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+nav {
+    box-shadow: 0px 7px 7px #CCC;
+}
+.home:hover, .contact:hover, .requirement:hover, .register:hover {
+    color: #EDEDED;
+}
+a {
+    color: white;
+    margin-left: 10px;
+}
+.contact, .requirement, .register {
+    margin-left: 18px;
+    
+}
+.content, .about-us, .skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5;
+}
+.logo img {
+    border-radius: 50%;
+    width: 85px;
+    height: 60px;
+}
+
+.content img {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 160px;
+    margin-top: 22px;
+    margin-bottom: 20px;
+}
+.content img:hover {
+    transform: scale(1.1);
+}
+h2 {
+    margin-top:5px;
+    margin-bottom: 15px;
+}
+h4 {
+    margin-top: 1px;
+    font-weight: 300;
+}
+p {
+    padding-top:10px;
+    text-align: center;
+}

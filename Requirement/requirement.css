@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+nav {
+    box-shadow: 0px 5px 5px #ccc;
+}
+a {
+    color: white;
+    margin-left: 10px;
+}
+.contact, .requirement, .register {
+    margin-left: 18px;
+    
+}
+.logo img {
+    border-radius: 50%;
+    width: 85px;
+    height: 60px;
+}
+.content {
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.requirement {
+    padding: 10px;
+}
+footer {
+    text-align: center;
+
+}

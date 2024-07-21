@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+nav {
+    box-shadow: 0px 5px 5px #ccc;
+}
+a {
+    color: white;
+    margin-left: 10px;
+}
+.contact, .requirement, .register {
+    margin-left: 18px;
+    
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    color: whitesmoke;
+    margin-left: 10px;
+}
+.logo img {
+    border-radius: 50%;
+    width: 85px;
+    height: 60px;
+}
+.contact {
+    margin-left: 15px;
+}
+h3 {
+    color: #413882;
+}
+.contact-us {
+    background-color: #D5DEEF;
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    border-radius: 18px;
+    height: 25rem;
+    padding: 28px;
+    margin-bottom: 260px;
+    margin-top: 105px;
+}
+.name, .message, .email {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    color: #413882;
+}
+.email input[type="text"] {    
+    border: none;
+    border-radius: 5px;
+}
+.name input[type="text"] {
+    border: none;
+    border-radius: 5px;
+}
+.message input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    height: 55px;
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+}
+#send {
+    background-color: #413882;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    width: 245px;
+    height: 45px;
+}
+#send:hover {
+    transform: scale(1.1)
+}
+footer {
+    text-align: center;
+}
+@media screen and (max-width: 480px) {
+    .contact-us {
+        width: 17rem;
+        height: 25.5rem;
+    }
+    #send {
+        margin-top: 8px;
+        width: 195px;
+    }
+}
