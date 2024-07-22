@@ -1,14 +1,19 @@
 function klik() {
-    var name = document.getElementById('name').value;
-    var born_date = document.getElementById('born_date').value;
-    var birth_place = document.getElementById('birth_place').value;
-    var school = document.getElementById('school').value;
-    var score = document.getElementById('score').value;
-    var send = document.getElementById('send').value;
-    if (name === "" || born_date === "" || birth_place === "" || school === "" || score === "") {
-        alert("Lengkapi data anda!");
+    // Get all input elements in the form
+    const inputs = document.querySelectorAll("form input");
+
+    // Check if all inputs have a value (are not empty)
+    let allFilled = true;
+    for (const input of inputs) {
+      if (input.value === "") {
+        allFilled = false;
+        break; // Exit the loop if an empty input is found
+      }
     }
-    else {
-        alert("Data anda sudah terkirim!");
+
+    if (allFilled) {
+      alert("Data anda sudah terkirim!");
+    } else {
+      alert("Silahkan isi semua kolom terlebih dahulu.");
     }
-}
+  }
