@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+  scroll-behavior: smooth;
+  background-image: url("Picsart_24-08-13_12-00-44-145.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+a {
+  color: white;
+  margin-left: 10px;
+}
+.contact,
+.requirement,
+.register {
+  margin-left: 18px;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h3 {
+  color: #413882;
+}
+.alert {
+  display: none;
+}
+.register {
+  background-color: #d5deef;
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  border-radius: 18px;
+  height: 112rem;
+  padding: 18px;
+  margin-bottom: 260px;
+  margin-top: 105px;
+}
+.name,
+.email,
+.phone,
+.born_date,
+.address,
+.rt,
+.rw,
+.district,
+.village,
+.city,
+.province,
+.zipcode,
+.birth_place,
+.gender,
+.anak-ke,
+.siblings,
+.school,
+.nisn,
+.score,
+.father,
+.mother,
+.fatherPhone,
+.motherPhone,
+.document {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  color: #413882;
+  width: auto;
+}
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  border: none;
+  border-radius: 5px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+#submit {
+  background-color: #413882;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  width: 230px;
+  height: 45px;
+}
+#submit:hover {
+  transform: scale(1.1);
+}
+.logo img {
+  border-radius: 50%;
+  width: 85px;
+  height: 60px;
+}
+footer {
+  text-align: center;
+  color: white;
+}

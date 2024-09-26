@@ -4,13 +4,14 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} fro
 import {getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD1VEseYdqS4zwTrJ3EVWqO8fukDLzEE88",
-  authDomain: "penulisanilmiah-fa5ba.firebaseapp.com",
-  projectId: "penulisanilmiah-fa5ba",
-  storageBucket: "penulisanilmiah-fa5ba.appspot.com",
-  messagingSenderId: "104666167654",
-  appId: "1:104666167654:web:f0a18117ea1f10e96930a7",
-  measurementId: "G-2QTCRR74FH"
+    apiKey: "AIzaSyBRPOfdYdC6Lerq-q_0cRQ0BSXvGhzcXwg",
+    authDomain: "webpendaftaran-3abf6.firebaseapp.com",
+    databaseURL: "https://webpendaftaran-3abf6-default-rtdb.firebaseio.com",
+    projectId: "webpendaftaran-3abf6",
+    storageBucket: "webpendaftaran-3abf6.appspot.com",
+    messagingSenderId: "266514772300",
+    appId: "1:266514772300:web:e5f9cff7ac213f001a9fe9",
+    measurementId: "G-S1T2WDLEQC"
 };
 
 // Initialize Firebase
@@ -49,7 +50,7 @@ register.addEventListener('click', (event)=>{
         const docRef = doc(db, "users", user.uid);
         setDoc(docRef, userData)
         .then(()=>{
-            window.location.href='/Register/index.html';
+            window.location.href='index.html';
         })
         .catch((error)=>{
             console.error("error writing document", error);

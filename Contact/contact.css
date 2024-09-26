@@ -3,6 +3,11 @@ body {
     padding: 0;
     font-family: poppins;
     scroll-behavior: smooth;
+    background-image: url("Picsart_24-08-13_12-00-44-145.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 }
 nav {
     box-shadow: 0px 5px 5px #ccc;
@@ -36,7 +41,7 @@ h3 {
     color: #413882;
 }
 .contact-us {
-    background-color: #D5DEEF;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     width: 22rem;

@@ -1,108 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Raditya Adam Nugraha">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
+    <title>Daftar</title>
     <link rel="shortcut icon" href="/Apply/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Apply/register.css">
+    <link rel="stylesheet" href="/Apply/apply.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js"></script>
   </head>
   <body>
     <nav>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand">WebPendaftaran</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="mainpage.html">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="requirement.html">PERSYARATAN</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="apply.html">DAFTAR</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="completion.html">KELULUSAN</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">KONTAK</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">LOGOUT</a>
-                  </li>
-                </ul>
-                <div class="logo">
-                  <img src="/Apply/logo-SMA-Tadika-Pertiwi.png" alt="SMA Tadika Pertiwi">
-                </div>
-              </div>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">WebPendaftaran</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="mainpage.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="requirement.html">PERSYARATAN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="apply.html">DAFTAR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="completion.html">KELULUSAN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">KONTAK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">LOGOUT</a>
+              </li>
+            </ul>
+            <div class="logo">
+              <img
+                src="/Apply/logo-SMA-Tadika-Pertiwi.png"
+                alt="SMA Tadika Pertiwi"
+              />
             </div>
-          </nav>
+          </div>
+        </div>
+      </nav>
     </nav>
-    <form>  
+    <form id="studentForm" onsubmit="uploadData(event)">
       <div class="register">
-      <h3>Daftar Disini</h3>
-      <div class="name">
-            <label for="email">Nama Lengkap:</label>
-            <input type="text" placeholder="Nama Lengkap..." id="name" required>
+        <h3>Daftar Disini</h3>
+        <div class="name">
+          <label for="name">Nama Lengkap:</label>
+          <input type="text" placeholder="Nama Lengkap..." id="name" autocomplete="on" required/>
+        </div>
+        <div class="email">
+          <label for="email">Email:</label>
+          <input type="text" placeholder="Email..." id="email" autocomplete="on" required/>
+        </div>
+        <div class="phone">
+          <label for="phone">Nomor Telepon</label>
+          <input type="number" placeholder="Nomor Telepon..." id="phone" accept=".pdf" autocomplete="on" required/>
         </div>
         <div class="born_date">
-            <label>Tanggal Lahir:</label>
-            <input type="date" id="born_date"required>
+          <label for="born_date">Tanggal Lahir:</label>
+          <input type="date" id="born_date" autocomplete="on" required />
         </div>
         <div class="address">
           <label for="address">Alamat:</label>
-          <input type="text" placeholder="Alamat..." id="address" required>
+          <input type="text" placeholder="Alamat Lengkap..." id="address" autocomplete="on" required/>
+        </div>
+        <div class="rt">
+          <label for="rt">RT:</label>
+          <input type="number" placeholder="RT" id="rt">
+        </div>
+        <div class="rw">
+          <label for="rw">RW:</label>
+          <input type="number" placeholder="RW" id="rw">
+        </div>
+        <div class="village">
+          <label for="village">Kelurahan:</label>
+          <input type="text" placeholder="Contoh: Kelurahan Gandul" id="village">
+        </div>
+        <div class="district">
+          <label for="district">Kecamatan:</label>
+          <input type="text" placeholder="Contoh: Kecamatan Cinere" id="district">
+        </div>
+        <div class="city">
+          <label for="city">Kota:</label>
+          <input type="text" placeholder="Contoh: Kota Depok" id="city">
+        </div>
+        <div class="province">
+          <label for="province">Provinsi:</label>
+          <input type="text" placeholder="Contoh: Provinsi Jawa Barat" id="province">
+        </div>
+        <div class="zipcode">
+          <label for="zipcode">Kode Pos:</label>
+          <input type="number" id="zipcode" placeholder="Kode Pos..." autocomplete="on" required>
         </div>
         <div class="birth_place">
-          <label>Kota Kelahiran:</label>
-          <input type="text" placeholder="Kota Kelahiran..." id="birth_place" required>
+          <label for="birth_place">Kota Kelahiran:</label>
+          <input type="text" placeholder="Kota Kelahiran..." id="birth_place" autocomplete="on" required/>
         </div>
         <div class="gender">
           <label for="gender">Jenis Kelamin:</label>
-          <input type="text" placeholder="Jenis Kelamin..." id="gender" required>
+          <input type="text" id="gender" placeholder="Laki-laki/Perempuan" autocomplete="on" required>
         </div>
         <div class="anak-ke">
           <label for="anak-ke">Anak ke:</label>
-          <input type="number" id="anak-ke" required>
+          <input type="number" id="anak-ke" autocomplete="on" required />
         </div>
         <div class="siblings">
           <label for="siblings">Jumlah Saudara:</label>
-          <input type="number" id="siblings" required>
+          <input type="number" id="siblings" autocomplete="on" required />
         </div>
         <div class="school">
-          <label>Asal Sekolah:</label>
-          <input type="text" placeholder="Asal Sekolah..." id="school" required>
+          <label for="school">Asal Sekolah:</label>
+          <input type="text" placeholder="Asal Sekolah..." id="school" autocomplete="on" required/>
         </div>
         <div class="nisn">
-          <label>NISN:</label>
-          <input type="text" placeholder="NISN..." id="nisn" required>
+          <label for="nisn">NISN:</label>
+          <input type="text" placeholder="NISN..." id="nisn" autocomplete="on" required/>
         </div>
         <div class="score">
-          <label>Nilai Ijazah:</label>
-          <input type="number" placeholder="Nilai Ijazah..." id="score" required>
+          <label for="score">Nilai Ijazah:</label>
+          <input type="number" placeholder="Nilai Ijazah..." id="score" autocomplete="on" required/>
+        </div>
+        <div class="father">
+          <label for="father">Nama Ayah:</label>
+          <input type="text" id="father" placeholder="Nama Ayah..." autocomplete="on" required>
+        </div>
+        <div class="mother">
+          <label for="mother">Nama Ibu:</label>
+          <input type="text" id="mother" placeholder="Nama Ibu..." autocomplete="on" required>
+        </div>
+        <div class="fatherPhone">
+          <label for="fatherPhone">Nomor Telepon Ayah:</label>
+          <input type="number" id="fatherPhone" placeholder="No. Telepon Ayah...">
+        </div>
+        <div class="motherPhone">
+          <label for="motherPhone">Nomor Telepon Ibu:</label>
+          <input type="number" id="motherPhone" placeholder="No. Telepon Ibu...">
+        </div>
+        <div class="document">
+          <label for="document">Upload Kartu Keluarga, Ijazah Terakhir, dan Akte Kelahiran yang digabungkan menjadi 1 PDF:</label>
+          <input type="file" class="inputFile" id="file" onchange="getFile(event)" accept=".pdf" autocomplete="on" required/>
         </div>
         <div class="button">
-          <button type="submit" id="send" onclick="klik()">Kirim</button>
+          <button type="submit" value="submit" id="submit">Kirim</button>
         </div>
       </div>
     </form>
-    <hr>
+    <hr />
     <footer>
       <p>Copyright &copy; SMAS Tadika Pertiwi</p>
     </footer>
-    <script src="/Apply/register.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-</body>
+    <script type="module" src="Apply/apply.js"></script>
+    <script type="module" src="Apply/document.js"></script>
+  </body>
 </html>
