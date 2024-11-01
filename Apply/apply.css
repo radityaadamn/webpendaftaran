@@ -3,10 +3,12 @@ body {
   padding: 0;
   font-family: poppins;
   scroll-behavior: smooth;
-  background-image: url("Picsart_24-08-13_12-00-44-145.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+nav {
+  box-shadow: 0px 5px 5px #ccc;
 }
 a {
   color: white;
@@ -23,18 +25,19 @@ form {
   justify-content: center;
 }
 h3 {
-  color: #413882;
+  color: black;
 }
 .alert {
   display: none;
 }
 .register {
-  background-color: #d5deef;
+  background-color: whitesmoke;
+  box-shadow: 0px 7px 7px #CCC;
   display: flex;
   flex-direction: column;
   width: 28rem;
   border-radius: 18px;
-  height: 112rem;
+  height: 120rem;
   padding: 18px;
   margin-bottom: 260px;
   margin-top: 105px;
@@ -44,6 +47,7 @@ h3 {
 .phone,
 .born_date,
 .address,
+.religion,
 .rt,
 .rw,
 .district,
@@ -67,13 +71,13 @@ h3 {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
-  color: #413882;
+  color: black;
   width: auto;
 }
 input[type="text"],
 input[type="date"],
 input[type="number"] {
-  border: none;
+  border: 1px solid;
   border-radius: 5px;
 }
 .button {
@@ -101,4 +105,14 @@ input[type="number"] {
 footer {
   text-align: center;
   color: white;
+}
+@media screen and (max-width: 480px) {
+ .register {
+  width: 18.5rem;
+  margin-right: 15px;
+ }
+
+ .button {
+   margin-top: 52px;
+ }
 }

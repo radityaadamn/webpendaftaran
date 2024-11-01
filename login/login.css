@@ -11,23 +11,19 @@ form {
     align-items: center;
     justify-content: center;
 }
-.sign {
+.login {
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     width: 15rem;
     border-radius: 18px;
-    height: 28rem;
+    height: 21rem;
     padding: 18px;
     margin-bottom: 260px;
     margin-top: 105px;
+    margin-left: 10px;
 }
-.sign > p, .login > p {
-    font-size: 12px;
-    margin-top: 0.5px;
-    color: #413882;
-}
-.first-name, .last-name, .email, .password {
+.email, .password {
     border: none;
     display: flex;
     flex-direction: column;
@@ -35,52 +31,29 @@ form {
     color: #413882;
     width: auto;
 }
+
 input[type="text"], input[type="email"], input[type="password"] {
     border: none;
     border-radius: 5px;
 }
+
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 25px;
 }
-#register {
-    background-color: #0066FF;
+
+#submitSignIn {
     border: none;
-    border-radius: 7px;
-    color: white;
-    width: 200px;
-    height: 45px;
-    font-family: poppins;
-    margin-bottom: 1rem;
-}
-#register:hover {
-    transform: scale(1.1);
-}
-.messageDiv{
-    background-color:hsl(327,90%,28%);
-    color:white;
-    padding:10px 20px;
-    margin: 10px;
     border-radius: 5px;
-    font-size:1rem;
-    opacity:0;
-    animation:fadeOut 7s forwards;
+    padding: 5px;
+    width: 5rem;
+    background-color: #0066FF;
+    color: white;
+    font-family: poppins;
 }
-@media screen and (max-width: 480px) {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        width: auto;
-    }
-    
-    .sign {
-        margin-top: 2rem;
-        
-    }
-    #signIn {
-        margin-top: 0.5px;
-    }
+
+#submitSignIn:hover {
+    transform: scale(1.1);
 }

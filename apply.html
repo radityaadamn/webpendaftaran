@@ -78,6 +78,19 @@
           <label for="address">Alamat:</label>
           <input type="text" placeholder="Alamat Lengkap..." id="address" autocomplete="on" required/>
         </div>
+        <div class="religion">
+          <label for="religion">Agama:</label>
+          <select id="religion" name="religion" required>
+            <option value="">--Pilih Agama--</option>
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Konghucu">Konghucu</option>
+            <option value="Lainnya">Lainnya</option>
+         </select>
+        </div>
         <div class="rt">
           <label for="rt">RT:</label>
           <input type="number" placeholder="RT" id="rt">
@@ -151,7 +164,7 @@
           <input type="number" id="motherPhone" placeholder="No. Telepon Ibu...">
         </div>
         <div class="document">
-          <label for="document">Upload Kartu Keluarga, Ijazah Terakhir, dan Akte Kelahiran yang digabungkan menjadi 1 PDF:</label>
+          <label for="document">Upload transkip nilai rapot smt 1-6, Akte Kelahiran, dan Kartu Keluarga yang digabungkan menjadi 1 file PDF:</label>
           <input type="file" class="inputFile" id="file" onchange="getFile(event)" accept=".pdf" autocomplete="on" required/>
         </div>
         <div class="button">

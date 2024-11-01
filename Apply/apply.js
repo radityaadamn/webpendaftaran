@@ -37,6 +37,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
     phone: document.getElementById("phone").value,
     born_date: document.getElementById("born_date").value,
     address: document.getElementById("address").value,
+    religion: document.getElementById("religion").value,
     rt: document.getElementById("rt").value,
     rw: document.getElementById("rw").value,
     village: document.getElementById("village").value,
