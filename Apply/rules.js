@@ -1,27 +1,22 @@
-document.getElementById("studentForm").addEventListener("submit", function (event) {
-  // Prevent form submission
-  event.preventDefault();
+function validateBirthDate(input) {
+  const today = new Date("2025-06-19");
+  const minDate = new Date(today);
+  const maxDate = new Date(today);
+  minDate.setFullYear(today.getFullYear() - 17);
+  maxDate.setFullYear(today.getFullYear() - 14);
 
-  // Get all form inputs
-  const formInputs = document.querySelectorAll("#studentForm input, #studentForm select");
-  let allFilled = true;
+  const birthDate = new Date(input.value);
+  const errorMessageElement = document.getElementById("birthDateError");
 
-  // Loop through inputs and check if all are filled
-  formInputs.forEach(input => {
-      if (!input.value.trim()) {
-          allFilled = false;
-          input.style.border = "2px solid red"; // Highlight empty field
-      } else {
-          input.style.border = ""; // Reset border if filled
-      }
-  });
-
-  // If all inputs are filled, proceed to form submission
-  if (allFilled) {
-      alert("Semua input telah terisi. Formulir siap dikirim!");
-      // Call your uploadData function or submit the form here
-      uploadData(event);
-  } else {
-      alert("Harap isi semua input yang diperlukan sebelum mengirim!");
+  if (!input.value || birthDate < minDate || birthDate > maxDate) {
+    errorMessageElement.textContent = `Tanggal lahir harus antara ${minDate.toLocaleDateString()} dan ${maxDate.toLocaleDateString()}`;
+    input.style.borderColor = "red";
+    errorMessageElement.style.display = "block";
+    return false;
   }
-});
+
+  errorMessageElement.textContent = "";
+  input.style.borderColor = "";
+  errorMessageElement.style.display = "none";
+  return true;
+}

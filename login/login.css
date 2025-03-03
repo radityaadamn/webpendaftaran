@@ -1,6 +1,6 @@
 body {
-    font-family: poppins;
-    flex-direction: row;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
     background-image: url("stacked-waves-haikei.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,23 +17,23 @@ form {
     flex-direction: column;
     width: 15rem;
     border-radius: 18px;
-    height: 25rem;
+    height: 23.8rem;
     padding: 18px;
     margin-bottom: 260px;
     margin-top: 105px;
-    margin-left: 10px;
 }
 .email, .password {
     border: none;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #413882;
     width: auto;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
-    font-family: poppins;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
     border: solid 1px white;
     border-radius: 7px;
     background-color: #FFFFFF;
@@ -57,9 +57,8 @@ input::placeholder {
     width: 12rem;
     background-color: #0066FF;
     color: white;
-    font-family: poppins;
+    font-family: montserrat, sans-serif;
 }
-
 #submitSignIn:hover {
     transform: scale(1.1);
 }
