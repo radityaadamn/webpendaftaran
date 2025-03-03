@@ -15,10 +15,7 @@ a {
     color: white;
     margin-left: 10px;
 }
-.contact, .requirement, .register {
-    margin-left: 18px;
-}
-.content, .about-us, .skill {
+.content, .about-us {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +28,6 @@ a {
     width: 85px;
     height: 60px;
 }
-
 .content img {
     border-radius: 50%;
     overflow: hidden;
@@ -51,6 +47,5 @@ h4 {
     font-weight: 300;
 }
 p {
-    padding-top:10px;
     text-align: center;
 }
